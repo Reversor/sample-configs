@@ -1,7 +1,12 @@
 zuul:
   routes:
-    workspaces-api: /workspaces/**
-    employees-api: /employees/**
+    workspaces-api:
+      path: /workspaces/**
+      service-id: workspaces-api
+    employees-api:
+      path: /employees/**
+      service-id: employees-api
+  ignored-services:
 
 eureka:
   client:
