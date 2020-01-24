@@ -1,12 +1,16 @@
+endpoints:
+  restart:
+    enabled: true
+  shutdown:
+    enabled: true
+  health:
+    sensitive: true
+
 zuul:
   routes:
-    workspaces-api:
-      path: /workspaces/**
-      service-id: workspaces-api
-    employees-api:
-      path: /employees/**
-      service-id: employees-api
-  ignored-services:
+    workspaces-api: /workspaces/**
+    employees-api: /employees/**
+  ignored-services: '*'
 
 eureka:
   client:
